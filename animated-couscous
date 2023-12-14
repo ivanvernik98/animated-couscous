@@ -1,0 +1,15 @@
+        case .changeAdjustments(let adjustments):
+            newShape.adjustments = adjustments
+            
+        case .changeFilter(let filter):
+            newShape.filter = filter
+            
+        case .changeMedia(let action):
+            newShape.media = mediaReducer.reduce(newShape.media, action)
+        }
+        
+        return newShape
+        
+    }
+    
+}
